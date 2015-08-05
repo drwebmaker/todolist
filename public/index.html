@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo List App</title>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/backbone/backbone.js"></script>
+
+    <script type="text/template" id="todo-list-template">
+        <h1>ToDo List</h1>
+        <ul></ul>
+    </script>
+
+    <script type="text/template" id="todo-list-item-template">
+        <%- description %>
+    </script>
+
+    <script src="scripts/model/ToDoModel.js"></script>
+    <script src="scripts/collection/ToDoCollection.js"></script>
+    <script src="scripts/view/ToDoListItemView.js"></script>
+    <script src="scripts/view/ToDoListView.js"></script>
+    <!--<script src="/scripts/view/BookFormView.js"></script>-->
+    <!--<script src="/scripts/ToDoApp.js"></script>-->
+
+    <script>
+        $(function() {
+            var todoList = new ToDoCollection([
+                {
+                    description: "First todo"
+                },
+                {
+                    description: "Second todo"
+                }
+            ]);
+
+            var view = new ToDoListView({
+                collection: todoList
+            });
+
+            view.render();
+
+            $('body').html(view.$el);
+        });
+
+    </script>
+</head>
+<body>
+</body>
+</html>
