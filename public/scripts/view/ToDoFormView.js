@@ -1,5 +1,5 @@
 var ToDoFormView = Backbone.View.extend({
-    template: _.template($("#todo-form-template").html()),
+    template: _.template(TemplateHelper.getTemplate('ToDoFormViewTemplate.html')),
 
     events: {
         "keypress #new-todo":  "createOnEnter"

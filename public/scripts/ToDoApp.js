@@ -34,7 +34,7 @@ var ToDoApp = function() {
         console.log(e);
     });
 
-    $("body")
+    $(".main-container")
         .append(this.formView.render().$el)
         .append(this.listView.render().$el)
 };

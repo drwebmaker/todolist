@@ -4,37 +4,39 @@
     <meta charset="UTF-8">
     <title>ToDo List App</title>
 
+    <link rel="stylesheet" href="css/main.css"/>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/backbone/backbone.js"></script>
 
-    <script type="text/template" id="todo-form-template">
-            <input id="new-todo" type="text" name="description"/>
-    </script>
+    <!--<script type="text/template" id="todo-form-template">-->
+            <!--<input id="new-todo" type="text" name="description"/>-->
+    <!--</script>-->
 
     <script type="text/template" id="todo-list-item-template">
         <input type="text" value="<%- description %>" disabled/>
     </script>
 
     <script src="scripts/model/ToDoModel.js"></script>
+    <script src="scripts/Utils/TemplateHelper.js"></script>
     <script src="scripts/collection/ToDoCollection.js"></script>
+    <!--<script src="templates/ToDoFormViewTemplate.html"></script>-->
     <script src="scripts/view/ToDoListItemView.js"></script>
     <script src="scripts/view/ToDoListView.js"></script>
     <script src="scripts/view/ToDoFormView.js"></script>
+
     <script src="scripts/ToDoApp.js"></script>
 
-    <script>
-        $(function() {
 
-            new ToDoApp();
-
-        });
-
-
-
-    </script>
 </head>
 <body>
-<h1>ToDo List</h1>
+
+<div class="main-container">
+    <h1>ToDo List</h1>
+</div>
+
+<script>
+    new ToDoApp();
+</script>
 </body>
 </html>
