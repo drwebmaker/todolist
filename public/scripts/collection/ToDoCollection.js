@@ -1,3 +1,5 @@
 var ToDoCollection = Backbone.Collection.extend({
-    model: ToDoModel
+    model: ToDoModel,
+
+    localStorage: new Store("todos-backbone")
 });

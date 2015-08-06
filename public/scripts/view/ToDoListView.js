@@ -8,8 +8,12 @@ var ToDoListView = Backbone.View.extend({
     },
 
     initialize: function() {
+        //this.collection = new ToDoListView();
+
         this._subview = [];
         this.listenTo(this.collection, "add", this.addItemView);
+
+        //this.collection.fetch();
     },
 
     addItemView: function(todo) {

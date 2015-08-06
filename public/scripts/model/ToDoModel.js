@@ -1,6 +1,6 @@
 var ToDoModel = Backbone.Model.extend({
     defaults: {
-        description: undefined,
+        description: "New task...",
         id: undefined
     }
 });
