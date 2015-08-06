@@ -10,10 +10,12 @@ var ToDoFormView = Backbone.View.extend({
 
     createOnEnter: function(e) {
         if (e.keyCode != 13) return;
-        //if (!this.input.val()) return;
-        console.log(this.input);
-        //todoList.create({title: this.input.val()});
-        //this.input.val('');
+
+        var model = new ToDoModel({
+            description: this.$("[name=description]").val()
+        });
+        this.collection.add(model);
+        this.$("[name=description]").val('');
     },
 
     render: function() {

@@ -8,58 +8,16 @@ var ToDoListView = Backbone.View.extend({
         return this;
     },
 
+    initialize: function() {
+        this._subview = [];
+
+        this.listenTo(this.collection, "add", this.addItemView);
+    },
+
     addItemView: function(todo) {
         var view = new ToDoListItemView({ model: todo });
-
-        //this.listenTo(view, "editToDo", function() {
-        //    this.trigger("editToDo", view);
-        //});
-        //self._subview.push(view);
+        this._subview.push(view);
         this.$("ul").append(view.render().$el);
     }
 
-    //events: {
-    //    "click .addToDo": "addToDo"
-    //},
-    //
-    //addToDo: function() {
-    //    window.app.navigate("/books/new", { trigger: true });
-    //},
-    //
-    //initialize: function() {
-    //    this.collection = new BookColection();
-    //    this._subview = [];
-    //
-    //    this.listenTo(this.collection, "add", this.addItmeView);
-    //    this.listenTo(this.collection, "remove", this.removeItmeView);
-    //
-    //    this.collection.fetch();
-    //},
-    //
-    //removeItmeView: function(book) {
-    //    var view = _.findWhere(this._subview, { model: book });
-    //
-    //    if(view) {
-    //        this._subview.splice(_.indexOf(this._subview, view), 1);
-    //        view.remove();
-    //    }
-    //},
-    //
-    //addItmeView: function(book) {
-    //    var self = this;
-    //    var view = new BookListItmeView({ model: book });
-    //
-    //    this.listenTo(view, "editBook", function() {
-    //        this.trigger("editBook", view);
-    //    });
-    //    self._subview.push(view);
-    //    self.$("tbody").append(view.render().$el);
-    //},
-
-
-    //remove: function() {
-    //    _.invoke(this._subview, "remove");
-    //
-    //    Backbone.View.prototype.remove.apply(this, arguments);
-    //}
 });
