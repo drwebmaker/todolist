@@ -9,18 +9,11 @@
     <script src="bower_components/backbone/backbone.js"></script>
 
     <script type="text/template" id="todo-form-template">
-        <div class="">
             <input id="new-todo" type="text" name="description"/>
-        </div>
-    </script>
-
-    <script type="text/template" id="todo-list-template">
-
-        <ul></ul>
     </script>
 
     <script type="text/template" id="todo-list-item-template">
-        <%- description %>
+        <input type="text" value="<%- description %>" disabled/>
     </script>
 
     <script src="scripts/model/ToDoModel.js"></script>
@@ -28,28 +21,16 @@
     <script src="scripts/view/ToDoListItemView.js"></script>
     <script src="scripts/view/ToDoListView.js"></script>
     <script src="scripts/view/ToDoFormView.js"></script>
-    <!--<script src="/scripts/ToDoApp.js"></script>-->
+    <script src="scripts/ToDoApp.js"></script>
 
     <script>
         $(function() {
-            var todoList = new ToDoCollection([
-                {
-                    description: "First todo"
-                },
-                {
-                    description: "Second todo"
-                }
-            ]);
 
-            var listView = new ToDoListView({ collection: todoList }),
-                formView = new ToDoFormView({ collection: todoList });
-
-            $("body")
-                    .append(formView.render().$el)
-                    .append(listView.render().$el)
-
+            new ToDoApp();
 
         });
+
+
 
     </script>
 </head>

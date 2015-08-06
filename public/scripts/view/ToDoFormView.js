@@ -2,14 +2,12 @@ var ToDoFormView = Backbone.View.extend({
     template: _.template($("#todo-form-template").html()),
 
     events: {
-        "keypress #new-todo":  "createOnEnter",
-        "dblclick .edit": "edit"
+        "keypress #new-todo":  "createOnEnter"
     },
-
-    edit: function() {},
 
     createOnEnter: function(e) {
         if (e.keyCode != 13) return;
+        if (!this.$("[name=description]").val()) return;
 
         var model = new ToDoModel({
             description: this.$("[name=description]").val()
