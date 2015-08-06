@@ -2,6 +2,9 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 
+app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.json());
+
 //var todos = [
 //    {
 //        id: 1,
@@ -11,8 +14,6 @@ var app = express();
 //
 //var nextId = 2;
 //
-//app.use(express.static(__dirname + '/public'));
-//app.use(bodyParser.json());
 //
 //app.use(function (req, res, next) {
 //    if(req.url.indexOf("/api") === 0 ||

@@ -14,14 +14,5 @@ var ToDoApp = Backbone.Router.extend({
         this.activeView = new ToDoListView();
 
         $("body").html(this.activeView.render().$el);
-    },
-    editBook: function(id) {
-        this.activeView && this.activeView.remove();
-
-        this.activeView = new BookFormView({
-            model: new BookModel({ id: id })
-        });
-
-        $("body").html(this.activeView.render().$el);
     }
 });

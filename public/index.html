@@ -8,8 +8,14 @@
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/backbone/backbone.js"></script>
 
+    <script type="text/template" id="todo-form-template">
+        <div class="">
+            <input id="new-todo" type="text" name="edit"/>
+        </div>
+    </script>
+
     <script type="text/template" id="todo-list-template">
-        <h1>ToDo List</h1>
+
         <ul></ul>
     </script>
 
@@ -21,7 +27,7 @@
     <script src="scripts/collection/ToDoCollection.js"></script>
     <script src="scripts/view/ToDoListItemView.js"></script>
     <script src="scripts/view/ToDoListView.js"></script>
-    <!--<script src="/scripts/view/BookFormView.js"></script>-->
+    <script src="scripts/view/ToDoFormView.js"></script>
     <!--<script src="/scripts/ToDoApp.js"></script>-->
 
     <script>
@@ -35,17 +41,19 @@
                 }
             ]);
 
-            var view = new ToDoListView({
-                collection: todoList
-            });
+            var listView = new ToDoListView({ collection: todoList }),
+                formView = new ToDoFormView({ collection: todoList });
 
-            view.render();
+            $("body")
+                    .append(formView.render().$el)
+                    .append(listView.render().$el)
 
-            $('body').html(view.$el);
+
         });
 
     </script>
 </head>
 <body>
+<h1>ToDo List</h1>
 </body>
 </html>
