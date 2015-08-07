@@ -6,7 +6,13 @@ var ToDoListItemView = Backbone.View.extend({
     events: {
         "dblclick": "edit",
         "keypress": "finishEdit",
-        "blur input": "closed"
+        "blur input": "closed",
+        "click a.destroy" : "destroy"
+    },
+
+    initialize: function(){
+        this.model.bind('change', this.render, this);
+        this.model.bind('destroy', this.remove, this);
     },
 
     edit: function() {
@@ -29,7 +35,11 @@ var ToDoListItemView = Backbone.View.extend({
         this.$el.addClass("noediting");
         this.$("input").prop('disabled', true);
         this.$("input").blur();
+        this.model.save({description: this.$("input").val()});
+    },
 
+    destroy: function() {
+        this.model.destroy();
     },
 
     render: function() {

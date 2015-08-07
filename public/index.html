@@ -5,10 +5,7 @@
     <title>ToDo List App</title>
 
     <link rel="stylesheet" href="css/main.css"/>
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/underscore/underscore.js"></script>
-    <script src="bower_components/backbone/backbone.js"></script>
-    <script src="scripts/lib/backbone.localStorage.js"></script>
+
 
     <!--<script type="text/template" id="todo-form-template">-->
             <!--<input id="new-todo" type="text" name="description"/>-->
@@ -29,12 +26,19 @@
     <script src="scripts/ToDoApp.js"></script>
 
 
+    <script data-main="app/app.js" src="app/lib/require.js"></script>
+
 </head>
 <body>
 
 <div class="main-container">
     <h1>ToDo List</h1>
 </div>
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/backbone/backbone.js"></script>
+<script src="bower_components/backbone.localStorage/backbone.localStorage.js"></script>
 
 <script>
     new ToDoApp();

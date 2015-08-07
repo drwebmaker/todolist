@@ -12,7 +12,9 @@ var ToDoFormView = Backbone.View.extend({
         var model = new ToDoModel({
             description: this.$("[name=description]").val()
         });
-        this.collection.add(model);
+        this.collection.create({description: this.$("[name=description]").val()});
+
+        //this.collection.add(model);
         this.$("[name=description]").val('');
     },
 

@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 //var nextId = 2;
 //
 //
-//app.use(function (req, res, next) {
+//app.js.use(function (req, res, next) {
 //    if(req.url.indexOf("/api") === 0 ||
 //        req.url.indexOf("/bower-components") === 0 ||
 //        req.url.indexOf("/scripts") === 0) {
@@ -25,11 +25,11 @@ app.use(bodyParser.json());
 //    res.sendFile(__dirname + '/public/index.html');
 //});
 //
-//app.get('/api/books', function(req, res) {
+//app.js.get('/api/books', function(req, res) {
 //    res.json(todos);
 //});
 //
-//app.get('/api/books/:id', function(req, res) {
+//app.js.get('/api/books/:id', function(req, res) {
 //    var todo = todos.filter(function(todo) { return todos.id == req.params.id; })[0];
 //
 //    if(!todo) {
@@ -40,7 +40,7 @@ app.use(bodyParser.json());
 //    res.json(todo);
 //});
 //
-//app.post('/api/books', function(req, res) {
+//app.js.post('/api/books', function(req, res) {
 //    if(!req.body.author || !req.body.title) {
 //        res.statusCode = 400;
 //        return res.json({ msg: "Invalid params sent" });
@@ -57,7 +57,7 @@ app.use(bodyParser.json());
 //    res.json(newToDO);
 //});
 //
-//app.put('/api/books/:id', function(req, res) {
+//app.js.put('/api/books/:id', function(req, res) {
 //    if(!req.body.author || !req.body.title) {
 //        res.statusCode = 400;
 //        return res.json({ msg: "Invalid params sent" });
@@ -76,7 +76,7 @@ app.use(bodyParser.json());
 //    res.json(todo);
 //});
 //
-//app.delete('/api/books/:id', function(req, res) {
+//app.js.delete('/api/books/:id', function(req, res) {
 //    var book = todos.filter(function(todo) { return todo.id == req.params.id; })[0];
 //
 //    if(!todo) {

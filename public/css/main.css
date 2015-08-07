@@ -17,6 +17,7 @@ input {
     font-size: 20px;
     padding: 10px;
     border: 1px solid #AFAFAF;
+    width: 100%;
     box-sizing: border-box;
 }
 
@@ -47,4 +48,16 @@ li {
 .noediting input {
     background: transparent;
     border: 1px solid transparent;
+}
+
+.list-item {
+    position: relative;
+}
+
+.destroy {
+    position: absolute;
+    right: 10px;
+    top: 30%;
+    text-decoration: none;
+    cursor: pointer;
 }

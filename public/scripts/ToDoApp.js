@@ -20,21 +20,14 @@
 //});
 
 var ToDoApp = function() {
-    this.todoList = new ToDoCollection([
-        {
-            description: "First todo"
-        },
-        {
-            description: "Second todo"
-        }
-    ]);
+    var todoList = new ToDoCollection;
 
-    this.listView = new ToDoListView({ collection: this.todoList });
-    this.formView = new ToDoFormView({ collection: this.todoList });
+    this.listView = new ToDoListView({ collection: todoList });
+    this.formView = new ToDoFormView({ collection: todoList });
 
-    this.listenTo(this.listView, "edit", function(e) {
-        console.log(e);
-    });
+    //this.listenTo(this.listView, "edit", function(e) {
+    //    console.log(e);
+    //});
 
     $(".main-container")
         .append(this.formView.render().$el)
