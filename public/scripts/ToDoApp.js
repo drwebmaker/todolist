@@ -11,7 +11,7 @@ var ToDoApp = Backbone.Router.extend({
     viewToDoList: function() {
         this.activeView && this.activeView.remove();
         this.activeView = new ViewApp();
-        $(".list-container").html(this.activeView.render().$el);
+        $(".main-container").html(this.activeView.render().$el);
     }
 });
 
@@ -22,12 +22,11 @@ var ViewApp = Backbone.View.extend({
 
         this.listView = new ToDoListView({ collection: todoList });
         this.formView = new ToDoFormView({ collection: todoList });
+    },
+    render: function () {
+        this.$el.append(this.formView.render().$el);
+        this.$el.append(this.listView.render().$el);
 
-        $(".main-container")
-            .append(this.formView.render().$el)
-            .append(this.listView.render().$el)
+        return this;
     }
-
 });
-//
-//_.extend(ToDoApp.prototype, Backbone.Events);

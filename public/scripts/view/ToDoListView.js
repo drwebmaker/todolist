@@ -11,6 +11,7 @@ var ToDoListView = Backbone.View.extend({
         //this.collection = new ToDoCollection();
 
         this._subview = [];
+
         this.listenTo(this.collection, "add", this.addItemView);
 
         this.collection.fetch();

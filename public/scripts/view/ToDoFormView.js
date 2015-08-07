@@ -6,7 +6,6 @@ var ToDoFormView = Backbone.View.extend({
     },
 
     initialize: function() {
-        this.collection = new ToDoCollection();
         this.collection.fetch().done(_.bind(this.render, this));
     },
 
