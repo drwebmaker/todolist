@@ -5,16 +5,17 @@ var ToDoFormView = Backbone.View.extend({
         "keypress #new-todo":  "createOnEnter"
     },
 
+    initialize: function() {
+        this.collection = new ToDoCollection();
+        this.collection.fetch().done(_.bind(this.render, this));
+    },
+
     createOnEnter: function(e) {
         if (e.keyCode != 13) return;
         if (!this.$("[name=description]").val()) return;
 
-        var model = new ToDoModel({
-            description: this.$("[name=description]").val()
-        });
         this.collection.create({description: this.$("[name=description]").val()});
 
-        //this.collection.add(model);
         this.$("[name=description]").val('');
     },
 

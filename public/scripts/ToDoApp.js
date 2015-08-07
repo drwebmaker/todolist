@@ -1,37 +1,33 @@
-//var ToDoApp = Backbone.Router.extend({
-//    routes: {
-//        "(/)": "viewToDoList"
-//    },
-//
-//    initialize: function() {
-//        this.activeView = undefined;
-//        Backbone.history.start({ pushState: true });
-//    },
-//
-//    viewToDoList: function() {
-//
-//
-//        this.activeView && this.activeView.remove();
-//
-//        this.activeView = new ToDoListView();
-//
-//        $("body").html(this.activeView.render().$el);
-//    }
-//});
+var ToDoApp = Backbone.Router.extend({
+    routes: {
+        "(/)": "viewToDoList"
+    },
 
-var ToDoApp = function() {
-    var todoList = new ToDoCollection;
+    initialize: function() {
+        this.activeView = undefined;
+        Backbone.history.start({ pushState: true });
+    },
 
-    this.listView = new ToDoListView({ collection: todoList });
-    this.formView = new ToDoFormView({ collection: todoList });
+    viewToDoList: function() {
+        this.activeView && this.activeView.remove();
+        this.activeView = new ViewApp();
+        $(".list-container").html(this.activeView.render().$el);
+    }
+});
 
-    //this.listenTo(this.listView, "edit", function(e) {
-    //    console.log(e);
-    //});
+var ViewApp = Backbone.View.extend({
 
-    $(".main-container")
-        .append(this.formView.render().$el)
-        .append(this.listView.render().$el)
-};
+    initialize: function() {
+        var todoList = new ToDoCollection;
 
-_.extend(ToDoApp.prototype, Backbone.Events);
+        this.listView = new ToDoListView({ collection: todoList });
+        this.formView = new ToDoFormView({ collection: todoList });
+
+        $(".main-container")
+            .append(this.formView.render().$el)
+            .append(this.listView.render().$el)
+    }
+
+});
+//
+//_.extend(ToDoApp.prototype, Backbone.Events);

@@ -1,7 +1,7 @@
 var ToDoListItemView = Backbone.View.extend({
     tagName: "li",
     className: "view noediting",
-    template: _.template(TemplateHelper.getTemplate('ToDoListViewTemplate.html')),
+    template: _.template(TemplateHelper.getTemplate('ToDoListItemViewTemplate.html')),
 
     events: {
         "dblclick": "edit",
@@ -11,8 +11,12 @@ var ToDoListItemView = Backbone.View.extend({
     },
 
     initialize: function(){
+        this.collection = new ToDoCollection();
+
         this.model.bind('change', this.render, this);
         this.model.bind('destroy', this.remove, this);
+
+        this.collection.fetch();
     },
 
     edit: function() {
