@@ -5,7 +5,7 @@ require.config({
         underscore: "bower_components/underscore/underscore",
         jquery: "bower_components/jquery/dist/jquery",
         'backbone.localStorage': "bower_components/backbone.localStorage/backbone.localStorage",
-        "text": "lib/text"
+        "text": "bower_components/text/text"
     },
     shim: {
         'backbone': {

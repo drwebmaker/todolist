@@ -3,11 +3,10 @@ define(function (require) {
     var Backbone = require('backbone'),
         _ = require('underscore'),
         $ = require('jquery'),
-        TemplateHelper = require('Utils/TemplateHelper'),
         ToDoCollection = require('collection/ToDoCollection'),
         ToDoListView = require('view/ToDoListView'),
         ToDoFormView = require('view/ToDoFormView'),
-        MainViewTemplate = require('text!../../templates/MainViewTemplate.html');
+        MainViewTemplate = require('text!templates/MainViewTemplate.html');
 
     var ViewApp = Backbone.View.extend({
 

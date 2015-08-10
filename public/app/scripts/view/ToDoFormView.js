@@ -3,7 +3,7 @@ define(function (require) {
     var Backbone = require('backbone'),
         _ = require('underscore'),
         $ = require('jquery'),
-        ToDoFormViewTemplate = require('text!../../templates/ToDoFormViewTemplate.html');
+        ToDoFormViewTemplate = require('text!templates/ToDoFormViewTemplate.html');
 
     var ToDoFormView = Backbone.View.extend({
         template: _.template(ToDoFormViewTemplate),
@@ -13,7 +13,8 @@ define(function (require) {
         },
 
         initialize: function() {
-            this.collection.fetch().done(_.bind(this.render, this));
+            this.listenTo(this.collection, "sinc", this.render);
+            this.collection.fetch();
         },
 
         createOnEnter: function(e) {

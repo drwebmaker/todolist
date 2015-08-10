@@ -18,6 +18,7 @@ define(function (require) {
             this._subview = [];
 
             this.listenTo(this.collection, "add", this.addItemView);
+            this.listenTo(this.collection, "remove", this.removeItmeView);
 
             this.collection.fetch();
         },
@@ -26,6 +27,15 @@ define(function (require) {
             var view = new ToDoListItemView({ model: todo });
             this._subview.push(view);
             this.$el.append(view.render().$el);
+        },
+
+        removeItmeView: function(todo) {
+            var view = _.findWhere(this._subview, { model: todo });
+
+            if(view) {
+                this._subview.splice(_.indexOf(this._subview, view), 1);
+                view.remove();
+            }
         }
 
     });

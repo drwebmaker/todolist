@@ -12,11 +12,15 @@
     "bower_components",
     "public/bower_components",
     "test",
-    "tests"
+    "tests",
+    "require",
+    "text"
   ],
   "dependencies": {
     "backbone": "~1.2.1",
     "jquery": "~2.1.4",
-    "backbone.localStorage": "~1.1.9"
+    "backbone.localStorage": "~1.1.9",
+    "requirejs": "latest",
+    "text": "latest"
   }
 }

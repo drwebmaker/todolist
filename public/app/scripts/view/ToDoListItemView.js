@@ -4,7 +4,7 @@ define(function (require) {
         _ = require('underscore'),
         $ = require('jquery'),
         ToDoCollection = require('collection/ToDoCollection'),
-        ToDoListItemViewTemplate = require('text!../../templates/ToDoListItemViewTemplate.html');
+        ToDoListItemViewTemplate = require('text!templates/ToDoListItemViewTemplate.html');
 
     var ToDoListItemView = Backbone.View.extend({
         tagName: "li",
@@ -19,12 +19,8 @@ define(function (require) {
         },
 
         initialize: function(){
-            this.collection = new ToDoCollection();
-
-            this.model.bind('change', this.render, this);
-            this.model.bind('destroy', this.remove, this);
-
-            this.collection.fetch();
+            this.listenTo(this.model, 'change', this.render);
+            this.listenTo(this.model, 'destroy', this.remove);
         },
 
         edit: function() {
