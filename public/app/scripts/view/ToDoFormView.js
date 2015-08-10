@@ -3,10 +3,10 @@ define(function (require) {
     var Backbone = require('backbone'),
         _ = require('underscore'),
         $ = require('jquery'),
-        TemplateHelper = require('Utils/TemplateHelper');
+        ToDoFormViewTemplate = require('text!../../templates/ToDoFormViewTemplate.html');
 
     var ToDoFormView = Backbone.View.extend({
-        template: _.template(TemplateHelper.getTemplate('ToDoFormViewTemplate')),
+        template: _.template(ToDoFormViewTemplate),
 
         events: {
             "keypress #new-todo":  "createOnEnter"

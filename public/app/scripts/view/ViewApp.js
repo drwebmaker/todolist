@@ -6,11 +6,12 @@ define(function (require) {
         TemplateHelper = require('Utils/TemplateHelper'),
         ToDoCollection = require('collection/ToDoCollection'),
         ToDoListView = require('view/ToDoListView'),
-        ToDoFormView = require('view/ToDoFormView');
+        ToDoFormView = require('view/ToDoFormView'),
+        MainViewTemplate = require('text!../../templates/MainViewTemplate.html');
 
     var ViewApp = Backbone.View.extend({
 
-        template: _.template(TemplateHelper.getTemplate('MainViewTemplate')),
+        template: _.template(MainViewTemplate),
 
         initialize: function () {
             var todoList = new ToDoCollection;

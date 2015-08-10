@@ -4,12 +4,12 @@ define(function (require) {
         _ = require('underscore'),
         $ = require('jquery'),
         ToDoCollection = require('collection/ToDoCollection'),
-        TemplateHelper = require('Utils/TemplateHelper');
+        ToDoListItemViewTemplate = require('text!../../templates/ToDoListItemViewTemplate.html');
 
     var ToDoListItemView = Backbone.View.extend({
         tagName: "li",
         className: "view noediting",
-        template: _.template(TemplateHelper.getTemplate('ToDoListItemViewTemplate')),
+        template: _.template(ToDoListItemViewTemplate),
 
         events: {
             "dblclick": "edit",
