@@ -7,25 +7,20 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'requirejs'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      //"public/scripts/ToDoApp.js",
-      "public/scripts/bower_components/requirejs/require.js",
-      "public/scripts/collection/ToDoCollection.js",
-      'public/scripts/*.js',
-      'public/scripts/tests/*Spec.js',
-      //{pattern: 'public/scripts/*.js', included: false},
-      //{pattern: 'public/scripts/tests/*Spec.js', included: false},
-      "public/require.config.js"
+      {pattern: 'public/scripts/**/*.js', included: false},
+      {pattern: 'public/tests/**/*Spec.js', included: false},
+
+      "public/tests/test-main.js"
     ],
 
 
     // list of files to exclude
     exclude: [
-      'public/scripts/ToDoApp.js'
     ],
 
 

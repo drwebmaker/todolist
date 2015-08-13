@@ -21,6 +21,8 @@
     "express": "^4.13.3",
     "karma": "latest",
     "karma-chrome-launcher": "^0.2.0",
-    "karma-jasmine": "latest"
+    "karma-jasmine": "latest",
+    "karma-requirejs": "^0.2.2",
+    "requirejs": "^2.1.20"
   }
 }
