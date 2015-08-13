@@ -5,9 +5,7 @@ define(function (require) {
         $ = require('jquery');
 
     var ToDoModel = Backbone.Model.extend({
-        defaults: {
-            description: "New task..."
-        }
+
     });
 
     return ToDoModel;

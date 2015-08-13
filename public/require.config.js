@@ -1,5 +1,5 @@
 require.config({
-    baseUrl: "app/scripts",
+    baseUrl: "scripts",
     paths: {
         backbone: "bower_components/backbone/backbone",
         underscore: "bower_components/underscore/underscore",

@@ -10,6 +10,7 @@ define(function (require) {
 
     var ViewApp = Backbone.View.extend({
 
+        className: 'main-container',
         template: _.template(MainViewTemplate),
 
         initialize: function () {
@@ -20,8 +21,8 @@ define(function (require) {
         },
         render: function () {
             this.$el.html(this.template());
-            this.$('.main-container').append(this.formView.render().$el);
-            this.$('.main-container').append(this.listView.render().$el);
+            this.$el.append(this.formView.render().$el);
+            this.$el.append(this.listView.render().$el);
 
             return this;
         }

@@ -18,7 +18,6 @@ define(function (require) {
             this._subview = [];
 
             this.listenTo(this.collection, "add", this.addItemView);
-            this.listenTo(this.collection, "remove", this.removeItmeView);
 
             this.collection.fetch();
         },
@@ -29,13 +28,10 @@ define(function (require) {
             this.$el.append(view.render().$el);
         },
 
-        removeItmeView: function(todo) {
-            var view = _.findWhere(this._subview, { model: todo });
+        remove: function() {
+            _.invoke(this._subview, "remove");
 
-            if(view) {
-                this._subview.splice(_.indexOf(this._subview, view), 1);
-                view.remove();
-            }
+            Backbone.View.prototype.remove.apply(this, arguments);
         }
 
     });

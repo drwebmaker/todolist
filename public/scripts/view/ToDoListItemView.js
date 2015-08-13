@@ -27,21 +27,22 @@ define(function (require) {
             this.trigger("edit", this);
             this.$el.addClass("editing");
             this.$el.removeClass("noediting");
-            this.$("input").prop('disabled', false);
+            this.$("input").attr('disabled', false);
             this.$("input").focus();
         },
 
         closed: function() {
             this.$el.removeClass("editing");
             this.$el.addClass("noediting");
-            this.$("input").prop('disabled', true);
+            this.$("input").attr('disabled', true);
         },
 
         finishEdit: function(e) {
             if (e.keyCode != 13) return;
+            if (!this.$("[name=description]").val()) this.model.destroy();
             this.$el.removeClass("editing");
             this.$el.addClass("noediting");
-            this.$("input").prop('disabled', true);
+            this.$("input").attr('disabled', true);
             this.$("input").blur();
             this.model.save({description: this.$("input").val()});
         },

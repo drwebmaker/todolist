@@ -12,11 +12,6 @@ define(function (require) {
             "keypress #new-todo":  "createOnEnter"
         },
 
-        initialize: function() {
-            this.listenTo(this.collection, "sinc", this.render);
-            this.collection.fetch();
-        },
-
         createOnEnter: function(e) {
             if (e.keyCode != 13) return;
             if (!this.$("[name=description]").val()) return;
