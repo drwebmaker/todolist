@@ -1,3 +1,7 @@
+var tests = Object.keys(window.__karma__.files).filter(function (file) {
+    return /Spec\.js$/.test(file);
+});
+
 require.config({
     baseUrl: "scripts",
     paths: {
@@ -23,4 +27,8 @@ require.config({
 
 requirejs(["ToDoApp"], function(ToDoApp) {
     new ToDoApp();
+});
+
+require(tests, function() {
+    window.__karma__.start();
 });

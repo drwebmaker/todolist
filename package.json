@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "karma start --browser=Chrome karma.conf.js",
     "start": "node server.js",
     "postinstall": "bower cache clean && bower install"
   },
@@ -18,6 +18,9 @@
   "dependencies": {
     "body-parser": "^1.13.3",
     "bower": "^1.4.1",
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "karma": "latest",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-jasmine": "latest"
   }
 }
