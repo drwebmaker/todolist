@@ -20,7 +20,6 @@ module.exports = function(config) {
       {pattern: 'public/tests/**/*Spec.js', included: false},
       {pattern: 'public/scripts/**/*.html', watched: true, included: false, served: true},
 
-
       "public/tests/test-main.js"
     ],
 
