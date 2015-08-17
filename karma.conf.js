@@ -12,8 +12,14 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+        {pattern: 'public/scripts/bower_components/sinonjs/sinon.js'},
+        {pattern: 'public/scripts/bower_components/jasmine-sinon/lib/jasmine-sinon.js'},
+
+
       {pattern: 'public/scripts/**/*.js', included: false},
       {pattern: 'public/tests/**/*Spec.js', included: false},
+      {pattern: 'public/scripts/**/*.html', watched: true, included: false, served: true},
+
 
       "public/tests/test-main.js"
     ],
@@ -56,7 +62,6 @@ module.exports = function(config) {
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['Chrome'],
-
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
