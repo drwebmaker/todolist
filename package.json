@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "karma start karma.conf.js",
+    "test": "grunt",
     "start": "node server.js",
     "postinstall": "bower cache clean && bower install"
   },
@@ -22,11 +22,14 @@
     "requirejs": "^2.1.20"
   },
   "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-karma": "^0.12.0",
     "karma": "latest",
-    "karma-sinon": "^1.0.4",
-    "karma-phantomjs-launcher": "latest",
     "karma-chrome-launcher": "^0.2.0",
     "karma-jasmine": "latest",
-    "karma-requirejs": "^0.2.2"
+    "karma-phantomjs-launcher": "latest",
+    "karma-requirejs": "^0.2.2",
+    "karma-sinon": "^1.0.4"
   }
 }
